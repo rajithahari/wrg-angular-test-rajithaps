@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "wrg-angular-test-rajithaps"
+    }
+  },
+  "defaultProject": "wrg-angular-test-rajithaps",
+  "cli": {
+    "analytics": false
+  }
 }
