@@ -1,0 +1,47 @@
+<div class="container">
+	<div class="row">
+		<div class="col-12 m-3">
+			<button type="button" class="btn btn-primary float-right" routerLink="/users">Create User</button>
+		</div>
+		<div class="col-12 m-3">
+			<table datatable [dtOptions]="dtOptions" class="row-border hover">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Gender</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Username</th>
+						<th>Password</th>
+						<th>DOB</th>
+						<th>Phone</th>
+					</tr>
+				</thead>
+				<tbody *ngIf="users">
+					<tr *ngFor="let user of users;let i = index">
+						<td>{{i+1}}</td>
+						<td>{{user.gender | titlecase}}</td>
+						<td>{{(user.name.title + " " + user.name.first + " " +user.name.last) | titlecase}}</td>
+						<td>{{user.email}}</td>
+						<td>{{user.username}}</td>
+						<td>{{user.password}}</td>
+						<td>{{user.dob | date}}</td>
+						<td>{{user.phone}}</td>
+					</tr>
+				</tbody>
+				<tfoot>
+					<tr>
+						<th>ID</th>
+						<th>Gender</th>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Username</th>
+						<th>Password</th>
+						<th>DOB</th>
+						<th>Phone</th>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+	</div>
+</div>
